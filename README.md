@@ -1,15 +1,15 @@
-# Compsies
+# SigmaGUI (read: sigma guy)
 
-Compsies is a lightweight, intuitive view library with a simple component API. It's designed to be extremely easy to understand while still providing the power to build interactive web applications.
+SigmaGUI is a lightweight, intuitive view library with a simple component API. It's designed to be extremely easy to understand while still providing the power to build interactive web applications.
 
-Compsies is just a fun project to play with. It's not production ready. It's not even close to being production ready. But it's fun!
+SigmaGUI is just a fun project to play with. It's not production ready. It's not even close to being production ready. But it's fun!
 
 ## Features
 
 - **Minimal API**: Create components with a straightforward function-based approach
 - **No Dependencies**: Zero external dependencies, just pure JavaScript/TypeScript
 - **Small Footprint**: Tiny bundle size for fast loading
-- **Declarative Rendering**: Describe your UI and let Compsies handle the DOM
+- **Declarative Rendering**: Describe your UI and let SigmaGUI handle the DOM
 - **Efficient Updates**: Smart diffing algorithm to minimize DOM operations
 
 ## Getting Started
@@ -17,20 +17,20 @@ Compsies is just a fun project to play with. It's not production ready. It's not
 ### Installation
 
 ```bash
-npm install compsies
+npm install sigma-gui
 ```
 
 Or include it directly in your HTML:
 
 ```html
-<script src="https://unpkg.com/compsies/dist/compsies.js"></script>
+<script src="https://unpkg.com/sigma-gui/dist/sigma-gui.js"></script>
 ```
 
 ### Basic Usage
 
 ```javascript
-import { c } from "compsies";
-import { render } from "compsies/dom/render";
+import { c } from "sigma-gui";
+import { render } from "sigma-gui/dom/render";
 
 // Create a simple component
 const HelloWorld = ({ name }) => {
@@ -50,7 +50,7 @@ render(HelloWorld({ name: "World" }), rootElement);
 
 ## Component API
 
-Components in Compsies are just functions that return element descriptions. The `c()` function is the core building block:
+Components in SigmaGUI are just functions that return element descriptions. The `c()` function is the core building block:
 
 ```javascript
 c(
@@ -88,7 +88,7 @@ const Button = ({ text, onClick }) => {
 
 ## State Management
 
-Compsies doesn't include built-in state management, but it's easy to implement your own:
+SigmaGUI doesn't include built-in state management, but it's easy to implement your own:
 
 ```javascript
 // Application state
@@ -132,7 +132,7 @@ renderApp();
 
 ## Building Projects
 
-Compsies works with standard build tools like webpack, Rollup, or esbuild. The example below shows how to set up a basic build with esbuild:
+SigmaGUI works with standard build tools like webpack, Rollup, or esbuild. The example below shows how to set up a basic build with esbuild:
 
 ```javascript
 // build.js
@@ -154,7 +154,7 @@ esbuild
 
 ## Examples
 
-Check out the examples directory for complete applications built with Compsies:
+Check out the examples directory for complete applications built with SigmaGUI:
 
 - Todo App
 - Tic Tac Toe Game

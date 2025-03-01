@@ -1,5 +1,5 @@
-import { c, geUseState } from "./compsies/compsies";
-import { render } from "./compsies/dom/render";
+import { c, geUseState } from "./sigma-gui/sigma-gui";
+import { render } from "./sigma-gui/dom/render";
 
 // Define Todo type
 interface Todo {

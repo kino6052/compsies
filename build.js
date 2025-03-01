@@ -8,7 +8,7 @@ async function build() {
     console.log("Building TypeScript project...");
 
     const result = await esbuild.build({
-      entryPoints: ["src/app.ts", "src/compsies/compsies.ts"],
+      entryPoints: ["src/app.ts", "src/sigma-gui/sigma-gui.ts"],
       bundle: true,
       outdir: "dist",
       minify: true,

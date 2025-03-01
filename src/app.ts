@@ -1,5 +1,5 @@
-import { c, geUseState } from "./compsies/compsies";
-import { render } from "./compsies/dom/render";
+import { c, geUseState } from "./sigma-gui/sigma-gui";
+import { render } from "./sigma-gui/dom/render";
 
 // Root element reference
 const rootElement = document.querySelector("#root") as HTMLElement;

@@ -1,4 +1,4 @@
-import { c, TComponent } from "./compsies";
+import { c, TComponent } from "./sigma-gui";
 
 describe("tiny component api", () => {
   it("should create basic nodes with text content", () => {

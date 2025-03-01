@@ -1,4 +1,4 @@
-import { TNode } from '../src/compsies/compsies';
+import { TNode } from '../src/sigma-gui/sigma-gui';
 import { convertToTreeNode } from './render';
 import { TreeNode } from './reconciliation';
 

@@ -1,4 +1,4 @@
-import { c, TComponent, TNode } from "../src/compsies/compsies";
+import { c, TComponent, TNode } from "../src/sigma-gui/sigma-gui";
 
 
 describe("tiny component api", () => {

@@ -88,19 +88,38 @@ const Button = ({ text, onClick }) => {
 
 ## State Management
 
-SigmaGUI doesn't include built-in state management, but it's easy to implement your own:
+SigmaGUI includes a simple yet powerful state management system using hooks:
 
 ```javascript
-// Application state
-const state = {
-  count: 0,
+import { c, geUseState } from "sigma-gui";
+import { render } from "sigma-gui/dom/render";
+
+// Root element reference
+const rootElement = document.querySelector("#root");
+
+// Helper function to re-render with debouncing
+let renderTimeout = null;
+const renderApp = () => {
+  if (renderTimeout) {
+    clearTimeout(renderTimeout);
+  }
+  renderTimeout = setTimeout(() => {
+    render(App(), rootElement);
+    renderTimeout = null;
+  }, 10);
 };
 
-// Component that uses state
+// Initialize state hooks outside of components
+const countState = geUseState(0, renderApp);
+
+// Component that uses state hook
 const Counter = () => {
+  // Get state accessor functions
+  const [getCount, setCount] = countState();
+
   const increment = () => {
-    state.count++;
-    renderApp(); // Re-render after state change
+    setCount(getCount() + 1);
+    // No need to call renderApp() - the state hook handles it
   };
 
   return c(
@@ -108,7 +127,7 @@ const Counter = () => {
     "counter",
     {},
     [
-      c("p", "count-display", {}, [`Count: ${state.count}`], "p"),
+      c("p", "count-display", {}, [`Count: ${getCount()}`], "p"),
       c(
         "button",
         "increment-button",
@@ -121,14 +140,18 @@ const Counter = () => {
   );
 };
 
-// Helper function to re-render the application
-const renderApp = () => {
-  render(Counter(), document.querySelector("#root"));
-};
-
 // Initial render
 renderApp();
 ```
+
+This approach provides several advantages:
+
+- State is encapsulated and reusable
+- Rendering is automatically triggered on state changes
+- Debouncing prevents excessive re-renders
+- State hooks can be shared across components
+
+For more complex applications, you can create multiple state hooks for different pieces of state.
 
 ## Building Projects
 
